@@ -1,5 +1,5 @@
 # phone-number-example.py
-# tested in python 2.7.12
+# tested in python 3.8.12
 # implements phone number verification in Python
 
 # dependencies
@@ -9,8 +9,8 @@
 # copy the access token for the App below.
 
 import requests
-from urllib import quote
-from urlparse import urljoin
+from urllib.parse import quote
+from urllib.parse import urljoin
 
 number_list = ['+447860438585',
                '+447513005998',
@@ -32,5 +32,5 @@ for number in number_list:
     # make the url for the lookup including quoting the + correctly)
     url = urljoin(base_url,quote(number))
     response = requests.get(url, headers=headers)
-    print 'status code: ' + str(response.status_code)
-    print 'response: ' + response.text
+    print ('status code: ' + str(response.status_code))
+    print ('response: ' + response.text)
